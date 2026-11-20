@@ -1,0 +1,603 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --ink: #18231f;
+  --muted: #748079;
+  --green: #bdf36b;
+  --green-dark: #91d33f;
+  --paper: #f5f7f2;
+  --line: #e8ece5;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  height: 86px;
+  padding: 0 7.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.8px;
+}
+
+.brand-mark {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--green);
+  font-size: 17px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.button {
+  min-height: 46px;
+  padding: 0 21px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: var(--green);
+  color: var(--ink);
+}
+
+.button-primary:hover {
+  background: var(--green-dark);
+}
+
+.button-quiet {
+  background: transparent;
+}
+
+.button-full {
+  width: 100%;
+}
+
+.explore-layout {
+  width: min(1100px, 85%);
+  min-height: calc(100vh - 146px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 9%;
+  padding: 45px 0 70px;
+}
+
+.explore-copy {
+  max-width: 430px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: #75816e;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(42px, 5vw, 66px);
+  line-height: 1.08;
+  letter-spacing: -3.5px;
+}
+
+h1 span {
+  color: #8abf48;
+}
+
+.muted {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.explore-copy > .muted {
+  max-width: 375px;
+  margin: 23px 0 29px;
+}
+
+.small-note {
+  margin-top: 23px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.small-note a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.map-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 25px;
+  background: var(--white);
+  box-shadow: 0 25px 70px #263b2412;
+}
+
+.map-topline {
+  height: 61px;
+  padding: 0 23px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.map-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #91d33f;
+}
+
+.map-menu {
+  color: #9ca69c;
+  letter-spacing: 3px;
+}
+
+.map-art {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+  background-color: #eaf0e4;
+  background-image:
+    linear-gradient(28deg, transparent 47%, #ffffffa8 48%, #ffffffa8 50%, transparent 51%),
+    linear-gradient(115deg, transparent 44%, #ffffffb5 45%, #ffffffb5 47%, transparent 48%),
+    linear-gradient(72deg, transparent 66%, #dce8d4 67%, #dce8d4 78%, transparent 79%);
+  background-size: 180px 155px, 210px 180px, 260px 230px;
+}
+
+.road {
+  position: absolute;
+  height: 11px;
+  border: 3px solid #fff;
+  border-left: 0;
+  border-right: 0;
+  opacity: 0.9;
+}
+
+.road-one {
+  width: 120%;
+  top: 37%;
+  left: -5%;
+  transform: rotate(-18deg);
+}
+
+.road-two {
+  width: 120%;
+  top: 67%;
+  left: -8%;
+  transform: rotate(19deg);
+}
+
+.road-three {
+  width: 85%;
+  top: 49%;
+  left: 11%;
+  transform: rotate(68deg);
+}
+
+.road-four {
+  width: 75%;
+  top: 30%;
+  left: 33%;
+  transform: rotate(105deg);
+}
+
+.park {
+  position: absolute;
+  background: #d2e6c4;
+  border-radius: 45% 55% 60% 40%;
+}
+
+.park-one {
+  width: 115px;
+  height: 75px;
+  left: 10%;
+  top: 15%;
+}
+
+.park-two {
+  width: 90px;
+  height: 105px;
+  right: 9%;
+  bottom: 8%;
+}
+
+.map-label-chip {
+  position: absolute;
+  color: #899584;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.chip-one {
+  top: 20%;
+  right: 20%;
+}
+
+.chip-two {
+  bottom: 20%;
+  left: 20%;
+}
+
+.map-marker,
+.you-marker {
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border-radius: 50% 50% 50% 0;
+  background: var(--white);
+  box-shadow: 0 5px 15px #263b2426;
+  transform: rotate(-45deg);
+}
+
+.map-marker i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #91d33f;
+}
+
+.marker-one {
+  top: 29%;
+  left: 48%;
+}
+
+.marker-two {
+  top: 61%;
+  left: 72%;
+}
+
+.marker-three {
+  top: 70%;
+  left: 34%;
+}
+
+.you-marker {
+  top: 44%;
+  left: 58%;
+  width: 36px;
+  height: 36px;
+  background: var(--ink);
+}
+
+.you-marker i {
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.map-footer {
+  min-height: 83px;
+  padding: 17px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.map-footer div {
+  display: grid;
+  gap: 5px;
+}
+
+.map-footer strong {
+  font-size: 13px;
+}
+
+.map-footer span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.round-arrow {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--green);
+  font-size: 19px;
+}
+
+.site-footer {
+  min-height: 60px;
+  padding: 0 7.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #89928b;
+  font-size: 11px;
+}
+
+.welcome-page,
+.signin-page {
+  background:
+    radial-gradient(circle at 50% 10%, #e7f3d9 0, transparent 38%),
+    var(--paper);
+}
+
+.welcome-page {
+  display: grid;
+  place-items: center;
+  padding: 35px 20px;
+}
+
+.welcome-card {
+  width: min(440px, 100%);
+  text-align: center;
+}
+
+.welcome-card .brand {
+  justify-content: center;
+}
+
+.welcome-art {
+  position: relative;
+  width: 190px;
+  height: 170px;
+  margin: 28px auto 21px;
+  display: grid;
+  place-items: center;
+}
+
+.orbit {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #d8e7ca;
+  border-radius: 50%;
+}
+
+.orbit-two {
+  width: 112px;
+  height: 112px;
+  border-style: dashed;
+}
+
+.map-pin {
+  width: 57px;
+  height: 57px;
+  display: grid;
+  place-items: center;
+  border-radius: 19px 19px 19px 5px;
+  background: var(--green);
+  font: 800 27px "Manrope", sans-serif;
+  transform: rotate(-45deg);
+}
+
+.map-pin::first-letter {
+  transform: rotate(45deg);
+}
+
+.art-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: #91d33f;
+  box-shadow: 0 3px 10px #263b2420;
+}
+
+.dot-one {
+  top: 29px;
+  right: 35px;
+}
+
+.dot-two {
+  bottom: 26px;
+  left: 34px;
+}
+
+.welcome-card h1,
+.signin-card h1 {
+  font-size: 48px;
+  letter-spacing: -2.7px;
+}
+
+.welcome-copy {
+  margin: 17px auto 25px;
+  max-width: 350px;
+  font-size: 14px;
+}
+
+.welcome-card .small-note {
+  font-size: 11px;
+}
+
+.signin-page .site-header {
+  height: 76px;
+}
+
+.signin-wrap {
+  min-height: calc(100vh - 76px);
+  padding: 20px;
+  display: grid;
+  place-items: center;
+}
+
+.signin-card {
+  width: min(430px, 100%);
+  padding: 42px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--white);
+  box-shadow: 0 24px 70px #263b2410;
+}
+
+.signin-card h1 {
+  font-size: 42px;
+}
+
+.signin-card > .muted {
+  margin: 13px 0 28px;
+  font-size: 14px;
+}
+
+.preview-form {
+  display: grid;
+  gap: 10px;
+}
+
+.preview-form label {
+  margin-top: 7px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.preview-form input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  outline: none;
+  background: #fbfcfa;
+  font: inherit;
+}
+
+.preview-form input:focus {
+  border-color: #a8d66e;
+  box-shadow: 0 0 0 3px #bdf36b35;
+}
+
+.preview-form button {
+  margin-top: 12px;
+}
+
+.form-message {
+  min-height: 16px;
+  margin: 0;
+  color: #66745e;
+  text-align: center;
+  font-size: 12px;
+}
+
+.preview-note {
+  margin: 20px 0 0;
+  color: #929b93;
+  text-align: center;
+  font-size: 10px;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    height: 72px;
+    padding: 0 6%;
+  }
+
+  .explore-layout {
+    width: 88%;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 42px 0 50px;
+  }
+
+  .explore-copy {
+    max-width: 520px;
+  }
+
+  .explore-copy h1 {
+    font-size: 52px;
+  }
+
+  .map-art {
+    height: 300px;
+  }
+
+  .site-footer {
+    padding: 0 6%;
+  }
+}
+
+@media (max-width: 430px) {
+  .brand {
+    font-size: 18px;
+  }
+
+  .header-actions {
+    gap: 2px;
+  }
+
+  .header-actions .button {
+    min-height: 40px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .explore-copy h1 {
+    font-size: 45px;
+  }
+
+  .signin-card {
+    padding: 30px 23px;
+  }
+
+  .signin-page .site-header .button {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}

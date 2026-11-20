@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in | Trackspace</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="signin-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Trackspace home">
+      <span class="brand-mark">T</span>
+      <span>trackspace</span>
+    </a>
+    <a class="button button-quiet" href="index.html">Back to explore</a>
+  </header>
+
+  <main class="signin-wrap">
+    <section class="signin-card">
+      <p class="eyebrow">WELCOME BACK</p>
+      <h1>Find your way<br><span>back in.</span></h1>
+      <p class="muted">Sign in to continue your Trackspace journey.</p>
+
+      <form class="preview-form">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password">
+
+        <button class="button button-primary button-full" type="submit">Sign in</button>
+        <p class="form-message" aria-live="polite"></p>
+      </form>
+
+      <p class="small-note">New to Trackspace? <a href="get-started.html">Create an account</a></p>
+      <p class="preview-note">Preview only — your details won’t be sent or stored.</p>
+    </section>
+  </main>
+</body>
+</html>
